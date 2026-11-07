@@ -1,0 +1,233 @@
+/* Variables */
+:root {
+    --font-heading: "Quicksand";
+
+    --color-black: #36413C;
+    --color-off-black: #5E6E66;   
+    --color-orange: #FF6D00;
+    --color-dark-orange: #DE6C17;
+    --color-white: #FFFFFF;
+
+    --bp-lg: 1024px;
+    --bp-md: 726px;
+    --bp-sm: 375px;
+}
+
+/* Base */
+body {
+    font-family: var(--font-heading);
+    font-size: 18px;
+}
+
+/* Typography */
+h1 {
+    font-size: clamp(40px, (100vw - 725px) * 1000, 45px);
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+h2 {
+    font-size: clamp(32px, (100vw - 725px) * 1000, 36px);
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+h3 {
+    font-size: clamp(20px, (100vw - 725px) * 1000, 24px);
+    font-weight: 500;
+    margin: 0 0 8px;
+}
+
+@media (width < 726px) {
+    .lead {
+        font-size: 24px;
+    }
+}
+
+/* Colour */
+.text-white {
+    color: var(--color-white);
+}
+
+/* Utils */
+.container {
+    max-width: var(--bp-lg);
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 4px;
+    background: var(--color-dark-orange);
+    color: var(--color-white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--color-dark-orange);
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.link-arrow:hover,
+.link-arrow:focus-visible {
+    color: var(--color-orange);
+}
+
+@media (width < 726px) {
+    .link-arrow {
+        font-size: 16px;
+    }
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: var(--color-orange);
+}
+
+/* Sections */
+/* Hero */
+.hero {
+    position: relative;
+    background:
+        linear-gradient(to right, rgb(0 0 0 / 0.5), rgb(255 255 255 / 0.0001)),
+        url('./assets/main-banner.png') center / cover no-repeat;
+    background-blend-mode: multiply;
+    min-height: 50vh;
+    padding-block: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    width: 100%;
+}
+
+.hero .hero-content-wrapper {
+    max-width: 450px;
+}
+
+.hero .hero-content-wrapper p {
+    margin-bottom: 24px;
+}
+
+.hero .hero-wave {
+    position: absolute;
+    inset: auto 0 0;
+    height: 62px;
+    background: url('./assets/banner-wave.svg') center bottom / 100% 100% no-repeat;
+}
+
+@media (width < 726px) {
+    .hero {
+        min-height: 640px;
+        padding-block: 160px 96px;
+        align-items: flex-end;
+        background:
+            linear-gradient(to top, rgb(0 0 0 / 0.5), rgb(255 255 255 / 0.0001)),
+            url('./assets/main-banner.png') 72% center / cover no-repeat;
+        background-blend-mode: multiply;
+    }
+}
+
+/* Services */
+.services {
+    padding-block: 48px 80px;
+    text-align: center;
+    color: var(--color-black);
+}
+
+.services .services-intro {
+    max-width: 640px;
+    margin: 0 auto 48px;
+    color: var(--color-off-black);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    text-align: left;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.15);
+}
+
+.card .card-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 10 / 7;
+    object-fit: cover;
+}
+
+.card .card-body {
+    padding: 24px 16px;
+}
+
+.card .card-body p {
+    font-size: 14px;
+    color: var(--color-off-black);
+    margin-bottom: 16px;
+}
+
+@media (width < 1024px) {
+    .container {
+        max-width: 820px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .card .card-image,
+    .card .card-body {
+        flex: 1 1 50%;
+        min-width: 0;
+    }
+
+    .card .card-body {
+        align-self: center;
+    }
+
+    .card .card-image {
+        aspect-ratio: auto;
+    }
+}
+
+@media (width < 726px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card .card-image {
+        aspect-ratio: 10 / 7;
+    }
+
+    .card .card-body {
+        align-self: stretch;
+    }
+}
