@@ -1,0 +1,91 @@
+/* Variables */
+:root {
+    --font-heading: "Quicksand";
+
+    --color-black: #36413C;
+    --color-off-black: #5E6E66;   
+    --color-orange: #FF6D00;
+    --color-dark-orange: #DE6C17;
+    --color-white: #FFFFFF;
+
+    --bp-lg: 1024px;
+    --bp-md: 726px;
+    --bp-sm: 375px;
+}
+
+/* Base */
+body {
+    font-family: var(--font-heading);
+}
+
+/* Typography */
+h1 {
+    font-size: clamp(40px, (100vw - 725px) * 1000, 45px);
+    font-weight: 700;
+    margin: 0 0 16px;
+}
+
+p {
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Colour */
+.text-white {
+    color: var(--color-white);
+}
+
+/* Utils */
+.container {
+    max-width: var(--bp-lg);
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 4px;
+    background: var(--color-dark-orange);
+    color: var(--color-white);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+    background: var(--color-orange);
+}
+
+/* Sections */
+.hero {
+    position: relative;
+    background:
+        linear-gradient(to right, rgb(0 0 0 / 0.5), rgb(255 255 255 / 0.0001)),
+        url('./assets/main-banner.png') center / cover no-repeat;
+    background-blend-mode: multiply;
+    min-height: 50vh;
+    padding-block: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    width: 100%;
+}
+
+.hero .hero-content-wrapper {
+    max-width: 450px;
+}
+
+.hero .hero-content-wrapper p {
+    margin-bottom: 24px;
+}
+
+.hero .hero-wave {
+    position: absolute;
+    inset: auto 0 0;
+    height: 62px;
+    background: url('./assets/banner-wave.svg') center bottom / 100% 100% no-repeat;
+}
