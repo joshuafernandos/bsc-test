@@ -16,6 +16,7 @@
 /* Base */
 body {
     font-family: var(--font-heading);
+    font-size: 18px;
 }
 
 /* Typography */
@@ -28,6 +29,12 @@ h1 {
 p {
     line-height: 1.5;
     margin: 0;
+}
+
+@media (width < var(--bp-md)) {
+    p.lead {
+        font-size: 24px;
+    }
 }
 
 /* Colour */
@@ -59,6 +66,7 @@ p {
 }
 
 /* Sections */
+/* Hero */
 .hero {
     position: relative;
     background:
@@ -88,4 +96,16 @@ p {
     inset: auto 0 0;
     height: 62px;
     background: url('./assets/banner-wave.svg') center bottom / 100% 100% no-repeat;
+}
+
+@media (width < 726px) {
+    .hero {
+        min-height: 640px;
+        padding-block: 160px 96px;
+        align-items: flex-end;
+        background:
+            linear-gradient(to top, rgb(0 0 0 / 0.5), rgb(255 255 255 / 0.0001)),
+            url('./assets/main-banner.png') 72% center / cover no-repeat;
+        background-blend-mode: multiply;
+    }
 }
